@@ -31,7 +31,7 @@ pagination:
   collection: 'posts'
   per_page: 5
   permalink: ':num.html'
-  title: ':title - (:num)'
+  title: ':title (:num)'
   limit: 0
   sort_reverse: true
 

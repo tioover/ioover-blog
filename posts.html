@@ -6,15 +6,18 @@ permalink: /posts/
 ---
 
 <article>
-<header class="post-header"><h1 class="post-title">读写终子</h1></header>
-{% if paginator.previous_page %}{% else %}
-<section class="welcome">
-<p>探险者偶然寻得这片空间的信标，误打误撞闯了进来。</p>
-<p>弹落身上的失真，探险者仔细打量了一下这里，散落的书本、符文和触媒似乎昭示着这是一位魔法师的庇护所。</p>
-<p>「绝对有不少好东西！」他两眼放光，迫不及待地想要探索一番了。</p>
+<header class="post-header"><h1 class="post-title">文章</h1></header>
+<section class="gamemaster">
+    <p>法師都有自己的魔法書，記載了自己畢生的知識。</p>
+    
+    <p>悄悄掀開這本被塵封的魔法書，這位菜鳥法師懶惰無比，只在前幾頁有筆記，後面都是一片空白。</p>
+    
+    <p>等等，最后似乎写了点什么？</p>
+
+    <p>後面幾頁到處都是這位菜鳥法師幼稚的塗鴉、對這個世界無知的妄言、甚至還試圖寫幾篇小說，且不說寫得到底有多差勁，全都是開頭寫了一點就沒堅持下去。</p>
+    
+    <p>你嘆息了一聲，把這本魔法書放回了原位。</p>
 </section>
-{% endif %}
-<h2 class="page-heading">文章</h2>
 
 <ul class="post-list">
 {% for post in paginator.posts %}{% if post.hide != true %}
@@ -29,8 +32,6 @@ permalink: /posts/
     </li>
 {% endif %}{% endfor %}
 </ul>
-{% if paginator.previous_page %}{% else %}<section class="goodbye"><p>这个空间是冒牌货，找不到任何让人感兴趣的宝藏，只装满了可笑的幼稚，探险者败兴而归。</p></section>{% endif %}
-
 <footer>
 <nav class="pagination">
 {% if paginator.next_page %}

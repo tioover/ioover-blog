@@ -6,13 +6,13 @@
   box-sizing: border-box
   
 html
-  font-size: 10pt
+  font-size: 12pt
   color: $text-color
   @extend %han-ligature
   text-decoration: none
-  @media screen and (min-width:$main-width)
+  @media screen and (min-width: $main-width)
     &
-      font-size: 12pt
+      font-size: 13pt
 
 body
   > header 
@@ -82,17 +82,14 @@ main
 hr
   padding: 0
   border: none
-  border-top: medium double #333
   color: #333
+  display: block
   text-align: center
+  height: 3em
   &:after
     content: "§"
     display: inline-block
-    position: relative
-    top: -0.8em
-    font-size: 1.25em
-    padding: 0 0.25em
-    text-shadow: 0 0 2px $bg-color
+    font-size: 1.5em
   
 a
   color: #B78D60
@@ -105,12 +102,13 @@ p
     border: 1px solid
     border-color: $line-color
 
-li
+ul
   list-style-type: square
 
 
 .post-list
-  padding: 1em 0
+  padding: 0
+  margin: 0
   @media screen and (min-width:$main-width) 
     &
       -moz-column-count: 2
@@ -121,7 +119,6 @@ li
       column-gap: 2em
   .post-item
     list-style: none
-
     display: inline-block
     h1
       font-size: 1rem

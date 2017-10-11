@@ -1,0 +1,34 @@
+@import ./variables
+
+$han-font-path: './fonts/'
+
+$han-biaodian-hans: Pro
+$han-biaodian-hant: Pro
+
+$han-section-counter:     true  // 标题计数
+$han-section-counter-toc: true  // 目录计数
+
+// 着重号形状
+// `none` || `filled` || `open`
+$han-text-emphasis-shape: filled
+
+$han-text-emphasis-color: lighten($text-color, 50%)
+
+// 着重号符号
+// `dot` || `circle` || `double-circle` || `triangle` || `sesame` || <string>
+$han-text-emphasis-mark: triangle
+
+// 无衬线
+$han-sans:  "Avenir Next", "Segoe UI", "Helvetica Neue", Arial
+// 衬线
+$han-serif: Lora, Georgia, 'Times New Roman'
+// 等宽
+$han-mono: 'Inziu Iosevka', 'CODE-CONTENT', Menlo, Courier
+
+$han-sans-zh:    ''
+$han-serif-zh:   'Noto Serif CJK SC', 'Noto Serif CJK', 'Source Han Serif SC', 'Source Han Serif', 'Songti'
+$han-cursive-zh: ''
+$han-mono-zh:    'Inziu Iosevka', 'Iosevka'
+
+$han-article: '.post'
+@import '../node_modules/han-css/index'

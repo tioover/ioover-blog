@@ -1,0 +1,15 @@
+_site
+.sass-cache
+.jekyll-metadata
+.vagrant/
+.vscode/
+Gemfile.lock
+package-lock.json
+node_modules/
+assets/style.*
+assets/script.js
+assets/fonts/han*
+.vscode/
+_posts/
+media/
+

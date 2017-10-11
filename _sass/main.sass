@@ -1,0 +1,190 @@
+@import ./variables
+@import ./han
+@import ./code
+@import ./font
+* 
+  box-sizing: border-box
+  
+html
+  font-size: 10pt
+  color: $text-color
+  @extend %han-ligature
+  text-decoration: none
+  @media screen and (min-width:$main-width)
+    &
+      font-size: 12pt
+
+body
+  > header 
+    height: 3rem
+    max-width: $main-width
+    margin: 0 auto
+    padding: 1rem
+    display: flex
+    align-items: center
+    justify-content: space-between
+    .site-title
+      height: 2rem
+      width: 2rem
+      color: transparent
+      background-image: url("./ioover.png")
+      margin-right: 1em
+      background-size: contain
+    .tagline
+      color: $outer-bg-color
+    > nav 
+      ul
+        margin: 0
+        padding: 0
+        @include han-typeface-by-lang( $typeface: mono )
+        li
+          display: inline
+          list-style-type: none
+          a
+            color: lighten($text-color, 10%)
+
+  > main
+    @include han-typeface-by-lang( $typeface: serif )
+  > footer
+    text-align: center
+    background-color: $outer-bg-color
+    border-top: 1px solid $line-color
+    padding: 1rem
+    small
+      color: lighten($text-color, 50%)
+      display: block
+      margin-top: 0.5em
+      a
+        color: lighten($link-color, 20%)
+
+
+h1
+  text-align: right
+  @media screen and (min-width:$main-width+20rem) 
+    &
+      writing-mode: vertical-rl
+      position: absolute
+      right: -1.75em
+main
+  margin: 0 auto
+  padding-bottom: 1rem
+  border-top: 1px solid $line-color
+  background-color: $bg-color
+  &>* 
+      max-width: $main-width
+      margin: 0 auto
+      padding: 0 1rem
+      position: relative
+
+
+/* Glyph, by Harry Roberts */
+
+hr
+  padding: 0
+  border: none
+  border-top: medium double #333
+  color: #333
+  text-align: center
+  &:after
+    content: "§"
+    display: inline-block
+    position: relative
+    top: -0.8em
+    font-size: 1.25em
+    padding: 0 0.25em
+    text-shadow: 0 0 2px $bg-color
+  
+a
+  color: #B78D60
+
+p
+  code
+    background-color: darken(white, 1%)
+    padding: 2px
+    font-size: 10pt
+    border: 1px solid
+    border-color: $line-color
+
+li
+  list-style-type: square
+
+
+.post-list
+  padding: 1em 0
+  @media screen and (min-width:$main-width) 
+    &
+      -moz-column-count: 2
+      -moz-column-gap: 2em
+      -webkit-column-count: 2
+      -webkit-column-gap: 2em
+      column-count: 2
+      column-gap: 2em
+  .post-item
+    list-style: none
+
+    display: inline-block
+    h1
+      font-size: 1rem
+    .post-meta
+      font-style: italic
+      font-size: 0.75em
+    .category-tag
+      font-size: 11px
+      text-transform: uppercase
+      @include han-typeface-by-lang( $typeface: mono )
+      padding: 2px
+      color: lighten($text-color, 50%)
+
+.post
+  img 
+    max-width: 100%
+  a
+    text-decoration: underline
+  sup
+    .footnote
+      margin: 0.5em
+      text-decoration: none
+
+  .reversefootnote
+    text-decoration: none
+  .post-meta
+    color: lighten($text-color, 40%)
+    display: flex
+    justify-content: space-between
+    .category
+      text-transform: uppercase
+
+blockquote
+  margin: 0
+  padding-left: 0.75em
+  font-size: 0.9em
+  border-left: 0.3em double lighten($text-color, 50%)
+
+
+.not-found
+  margin: 10px auto
+  max-width: 600px
+  text-align: center
+  h1
+    margin: 30px 0
+    font-size: 4em
+    line-height: 1
+    letter-spacing: -1px
+
+.pagination
+  display: flex
+  align-items: center
+  height: 2rem
+  justify-content: space-between
+  a
+    background-color: $outer-bg-color
+    padding: 5px
+    border: 1px solid $line-color
+
+.welcome, .goodbye
+  color: lighten($text-color, 40%)
+  height: 7em
+  width: 100%
+  margin: 1em 0
+  writing-mode: vertical-rl
+  @include han-typeface-by-lang( $typeface: cursive )

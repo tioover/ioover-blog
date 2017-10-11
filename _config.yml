@@ -1,0 +1,48 @@
+
+title: I/O Over
+email: t@ioover.net
+tagline: 你不好，世界
+description: 酿泉的领地，编程初心者的小站，希望能从我无意义的生活中榨取点有意义的成分送给你。
+baseurl: "" 
+url: "https://ioover.net"
+author:
+  twitter: io_over
+  github:  tioover
+excerpt_separator:   "<!--more-->"
+date_format: "%b %-d, %Y"
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-tidy
+  - jekyll-default-layout
+  - jekyll-paginate
+
+permalink: /:categories/:title/
+disqus:
+  shortname: ioover
+google_analytics: UA-75942921-1
+
+paginate: 5
+paginate_path: "page/:num"
+
+kramdown:
+  auto_ids: true
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package*.json
+  - webpack.config.js
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - _sass/
+  - manage.py
+  - README.md
+  - LICENCE

@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<article>
+<header class="post-header"><h1 class="post-title">读写终子</h1></header>
+{% if paginator.previous_page %}{% else %}
+<section class="welcome">
+<p>探险者偶然寻得这片空间的信标，误打误撞闯了进来。</p>
+<p>弹落身上的失真，探险者仔细打量了一下这里，散落的书本、符文和触媒似乎昭示着这是一位魔法师的庇护所。</p>
+<p>「绝对有不少好东西！」他两眼放光，迫不及待地想要探索一番了。</p>
+</section>
+{% endif %}
+<h2 class="page-heading">文章</h2>
+
+<ul class="post-list">
+{% for post in paginator.posts %}{% if post.hide != true %}
+{% assign date_format = site.date_format | default: "%b %-d, %Y" %}
+    <li class="post-item">
+        <p><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a><span class="category-tag">{{ post.category }}</span>：
+        {% if post.summary %}{{ post.summary }}
+            {% else %}<blockquote class="post.excerpt">{{ post.excerpt | strip_html  | truncate: 140 }}</blockquote>
+        {% endif %}
+        </p>
+        <p class="post-meta">Post on {{ post.date | date: date_format }}.</p>
+    </li>
+{% endif %}{% endfor %}
+</ul>
+{% if paginator.previous_page %}{% else %}<section class="goodbye"><p>这个空间是冒牌货，找不到任何让人感兴趣的宝藏，只装满了可笑的幼稚，探险者败兴而归。</p></section>{% endif %}
+
+<footer>
+<nav class="pagination">
+{% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ paginator.next_page_path | relative_url }}">&lArr; 之前</a>
+{% else %}
+{% endif %}
+{% if paginator.previous_page %}
+    <a class="pagination-item newer" href="{{ paginator.previous_page_path | relative_url }}">之后 &rArr;</a>
+{% else %}
+{% endif %}
+</nav>
+</footer>
+</article>

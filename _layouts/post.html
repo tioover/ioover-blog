@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
+    {% if page.feature %}
+      <img src="/media/{{ page.feature }}" class="feature-image">
+    {% endif %}
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+  <footer>{% include post-meta.html %}</footer>
+  {% comment %} {% if site.disqus.shortname %}
+    {% include disqus_comments.html %}
+  {% endif %} {% endcomment %}
+</article>

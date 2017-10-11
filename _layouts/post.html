@@ -14,7 +14,6 @@ layout: default
     {{ content }}
   </div>
   <footer>{% include post-meta.html %}</footer>
-  {% comment %} {% if site.disqus.shortname %}
-    {% include disqus_comments.html %}
-  {% endif %} {% endcomment %}
+  {% include disqus_comments.html %}
+
 </article>

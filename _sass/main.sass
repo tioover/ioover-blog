@@ -6,7 +6,7 @@
   box-sizing: border-box
   
 html
-  font-size: 12pt
+  font-size: 11.25pt
   color: $text-color
   @extend %han-ligature
   text-decoration: none
@@ -29,7 +29,7 @@ body
       color: transparent
       background-image: url("./ioover.png")
       margin-right: 1em
-      background-size: contain
+      background-size: cover
     .tagline
       color: $outer-bg-color
     > nav 
@@ -178,10 +178,13 @@ blockquote
     padding: 5px
     border: 1px solid $line-color
 
-.welcome, .goodbye
-  color: lighten($text-color, 40%)
-  height: 7em
+.gamemaster
+  color: lighten($text-color, 50%)
+  display: block
+  font-size: 0.9em
+  height: 8em
   width: 100%
+  overflow: auto
   margin: 1em 0
   writing-mode: vertical-rl
   @include han-typeface-by-lang( $typeface: cursive )

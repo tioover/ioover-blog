@@ -16,18 +16,24 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
-  - jekyll-paginate
   - jekyll-tidy
   - jekyll-default-layout
-  - jekyll-paginate
+  - jekyll-paginate-v2
 
 permalink: /:categories/:title/
 disqus:
   shortname: ioover
 google_analytics: UA-75942921-1
 
-paginate: 5
-paginate_path: "page/:num"
+pagination:
+  enabled: true
+  debug: false
+  collection: 'posts'
+  per_page: 5
+  permalink: ':num.html'
+  title: ':title - (:num)'
+  limit: 0
+  sort_reverse: true
 
 kramdown:
   auto_ids: true
